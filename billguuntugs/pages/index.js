@@ -1,23 +1,35 @@
 import Image from "next/image";
-import localFont from "next/font/local";
-
-
-
 
 export default function Home() {
   return (
-    <div className="bg-white text-black flex justify-center justify-center item-centerh-screen ">
-      <div className=" w-6 h-4/5 bg-#22d3ee border-current colums-2 flex-2 justify-center item-center">
-      <div className="w-10 h-full bg-white ml-10" ></div>
-      <div className="w-10 h-full bg-white ml-4" ></div>
-      <div className="space-y-4 ml-10" ></div>
-      
-    <p className="text-2xl text-black flex mr-10">bilguuntugs</p>
-    <p className="text-2xl text-black flex mr-10">bilguuntugs</p>
-    <p className="text-2xl text-black flex mr-10">bilguuntugs</p>
-    <p className="text-2xl text-black flex mr-10">bilguuntugs</p>
-    <Image src="/h.jpg" width={100} height={100} />
+    <div className="h-screen flex items-center justify-center p-10">
+      <div className="bg-slate-300 w-[650px] h-[350px] flex border p-6">
+        <Image
+          src="/h.jpg"
+          height={200}
+          width={200}
+          className="m-4"
+        />
+        <div className="flex flex-col justify-between">
+          <div>
+            <p className="text-4xl text-white mt-5 font-bold">bilguuntugs</p>
+          </div>
+          <div>
+            <p className="text-2xl mt-2 text-white">altanzags</p>
+          </div>
+          <div className="mt-7">
+            <div className="flex">
+              <p className="text-1xl text-white">94000000</p>
+            </div>
+            <div className="flex">
+              <p className="text-1xl text-white">kakekaje85@gmail.com</p>
+            </div>
+            <div className="flex">
+              <p className="text-1xl text-white">Nest Education It School</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
   );
 }

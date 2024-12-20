@@ -2,42 +2,93 @@ import { useState } from "react";
 
 export default function week(){
     const [grid, setGrid]=useState(false);
+    const [search, setSearch]= useState();
 const data = [
     {
         id: 1,
-        title:"TEST1",
+        title:"Ganerdene",
         description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+        "age:16 hobby:math sex:male",
 
     }, //0
     {
         id: 2,
-        title:"TEST2",
+        title:"Temuugei",
         description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+        "age:16 hobby:math sex:male",
 
     },//1
      {
         id: 3,
-        title:"TEST3",
+        title:"Bill",
         description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+        "age:19 hobby:math sex:male",
 
     },//3
     {
         id: 4,
-        title:"TEST4",
+        title:"Temuuln",
         description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+        "age:16 hobby:math sex:male",
 
     },
     {
         id: 5,
-        title:"TEST5",
+        title:"Boldoo",
         description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+        "age:21 hobby:math sex:male",
 
     },
+    {
+        id: 5,
+        title:"Boldoo",
+        description:
+        "age:21 hobby:math sex:male",
+
+    },
+    {
+        id: 5,
+        title:"Boldoo",
+        description:
+        "age:21 hobby:math sex:male",
+
+    },
+    {
+        id: 5,
+        title:"Boldoo",
+        description:
+        "age:21 hobby:math sex:male",
+
+    },
+    {
+        id: 5,
+        title:"Boldoo",
+        description:
+        "age:21 hobby:math sex:male",
+
+    },
+    {
+        id: 5,
+        title:"Boldoo",
+        description:
+        "age:21 hobby:math sex:male",
+
+    },
+    {
+        id: 5,
+        title:"Boldoo",
+        description:
+        "age:21 hobby:math sex:male",
+
+    },
+    {
+        id: 5,
+        title:"Boldoo",
+        description:
+        "age:21 hobby:math sex:male",
+
+    },
+    
 ];
 return(
     <div className="p-6 max-w-4xl mx-auto ">
@@ -49,6 +100,20 @@ return(
         >
             {grid ? "Жагсаалт харах руу шилжих " : "Grid view руу шилжих"}
          </button>
+        <div className="w-full h-[100px] flex item-center flex-col gap-3 pt-3">
+            <p className="font-bold text-xl text-white shadow-sm">11B</p>
+            <input
+            className="text-black border flex border-white shadow-white shadow-md pl-1 py-1 w-full shadow-lg"
+            type="search"
+            onClick={(e) => setSearch(e.target.value)}
+            />
+        </div>
+
+
+
+
+
+
         </div>
         <div className={
             grid == true ? "grid grid-cols-1 sm:grid-cols-2 gap-6" : "space-y-4"
@@ -65,10 +130,7 @@ return(
 
             
         ))}
-    {data.map((data) => {
-        return <div>bilguuntugs</div>
-    
-    })}
+  
         </div>
     </div>
 );

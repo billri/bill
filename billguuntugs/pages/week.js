@@ -103,7 +103,7 @@ return(
         <div className="w-full h-[100px] flex item-center flex-col gap-3 pt-3">
             <p className="font-bold text-xl text-white shadow-sm">11B</p>
             <input
-            className="text-black border flex border-white shadow-white shadow-md pl-1 py-1 w-full shadow-lg"
+            className="text-black border flex border-white shadow-white pl-1 py-1 w-full shadow-lg"
             type="search"
             onClick={(e) => setSearch(e.target.value)}
             />

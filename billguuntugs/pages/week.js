@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function week(){
+export default function Week(){
     const [grid, setGrid]=useState(false);
     const [search, setSearch]= useState();
 const data = [

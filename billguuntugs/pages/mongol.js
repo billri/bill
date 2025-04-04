@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
- 
+
 const Home = () => {
     const [data, setData] = useState([]);
-    const [time, setTime] = useState(0);
     const [search, setSearch] = useState("");
     const [loading, setLoading] = useState(true);
     const [grid, setGrid] = useState(false);
- 
+    const [error, setError] = useState(null);
+
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -22,7 +22,7 @@ const Home = () => {
                 const result5 = await res5.json();
                 const res6 = await fetch('https://mongol-api-rest.vercel.app/historicalFigures');
                 const result6 = await res6.json();
- 
+
                 setData([
                     ...result1.touristAttractions,
                     ...result2.instruments,
@@ -33,34 +33,34 @@ const Home = () => {
                 ]);
                 setLoading(false);
             } catch (error) {
-                console.log('Error fetching data:', error);
+                setError("Failed to fetch data. Please try again later.");
                 setLoading(false);
             }
         };
         fetchData();
     }, []);
- 
+
     const searchFilter = (array) => {
         return array.filter(
             (e) => e.name && e.name.toLowerCase().includes(search.toLowerCase())
         );
     }
- 
+
     const filteredData = searchFilter(data);
- 
+
     return (
         <div className="w-full bg-white">
-            <div className="w-full h-96 text-black bg-center flex flex-col justify-between items-center bg-white">
+            <div className="w-45 h-96 text-black bg-center flex flex-col justify-between items-center bg-white">
                 <header className="w-full h-20 flex justify-between items-center font-semibold px-30">
-                    <div className="w-full flex justify-between items-center">
+                    <div className="w-full flex justify-between items-center space-x-4">
                         <a href="" className="">Mongolia</a>
                         <a href="" className="">Travel plans</a>
                         <a href="" className="">Dates</a>
                         <a href="" className="">Login / Signup</a>
-                        <button className="bg-blue-400 hover:bg-blue-500 flex items-center transition-all ease-in-out p-3 text-black rounded-lg hover:shadow-none shadow-lg">
-                            +976 99014565
-                        </button>
                     </div>
+                    <button className="bg-blue-400 hover:bg-blue-500 flex items-center transition-all ease-in-out p-3 text-black rounded-lg hover:shadow-none shadow-lg">
+                        +976 94990000   
+                    </button>
                 </header>
                 <div className="w-full flex justify-between items-center px-36 bg-white">
                     <p className="font-bold text-5xl font-mono">Join us to explore the wonder of Mongolia!</p>
@@ -77,6 +77,8 @@ const Home = () => {
                     <p className="text-black font-bold text-2xl">Suggested</p>
                     {loading ? (
                         <div className="h-96 w-80 animate-pulse bg-white mt-12 p-4 text-black">Please wait.</div>
+                    ) : error ? (
+                        <div className="text-red-500 mt-12">{error}</div>
                     ) : (
                         <div className={`w-full ${grid ? "grid grid-cols-2 gap-6 bg-white" : "grid grid-cols-4 gap-6 bg-white"} mt-8`}>
                             {filteredData.length === 0 ? (
@@ -103,5 +105,5 @@ const Home = () => {
         </div>
     );
 };
- 
+
 export default Home;

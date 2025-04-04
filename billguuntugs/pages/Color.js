@@ -3,7 +3,7 @@
 import React,{useState} from "react";
 
 
-export default function Index2() {
+export default function Colors() {
         const [color, setColor] = useState("");
         return (
         <div className= {`flex space-x-4 w-full h-screen bg-${color}-800`}>
